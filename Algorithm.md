@@ -1,8 +1,10 @@
 # Algorithm
 
-## 1. Bagging and Boosting
+## 1. Machine Learning
 
-1、Bagging (bootstrap aggregating)
+#### (1) Bagging and Boosting
+
+##### 1、Bagging (bootstrap aggregating)
 
 A）从原始样本集中抽取训练集。每轮从原始样本集中使用Bootstraping的方法抽取n个训练样本（在训练集中，有些样本可能被多次抽取到，而有些样本可能一次都没有被抽中）。共进行k轮抽取，得到k个训练集。（k个训练集之间是相互独立的）
 
@@ -12,7 +14,7 @@ C）对分类问题：将上步得到的k个模型采用投票的方式得到分
 
  
 
-2、Boosting
+##### 2、Boosting
 
 1）在每一轮如何改变训练数据的权值或概率分布？
 
@@ -26,7 +28,7 @@ C）对分类问题：将上步得到的k个模型采用投票的方式得到分
 
 
 
-3、Bagging，Boosting二者之间的区别
+##### 3、Bagging，Boosting二者之间的区别
 
 Bagging和Boosting的区别：
 
@@ -54,9 +56,7 @@ Bagging：各个预测函数可以并行生成
 
 Boosting：各个预测函数只能顺序生成，因为后一个模型参数需要前一轮模型的结果。
 
-
-
-4、总结
+##### 4、总结
 
 这两种方法都是把若干个分类器整合为一个分类器的方法，只是整合的方式不一样，最终得到不一样的效果，将不同的分类算法套入到此类算法框架中一定程度上会提高了原单一分类器的分类效果，但是也增大了计算量。
 
@@ -70,13 +70,9 @@ Boosting：各个预测函数只能顺序生成，因为后一个模型参数需
 
 
 
-参考文献
+#### (2) SVM
 
-[1] 林轩田，机器学习技法。
 
-[2] IRLAB, http://www.cnblogs.com/guolei/archive/2013/05/21/3091301.html
-
-[3] 百度技术，http://baidutech.blog.51cto.com/4114344/743809/
 
 ## 3. Decision Tree
 
@@ -108,7 +104,13 @@ Boosting：各个预测函数只能顺序生成，因为后一个模型参数需
 
 (9) 过拟合解决
 
-## 3. SVM
+(10) 优化器
+
+Adam:	适应性梯度算法（AdaGrad）为每一个参数保留一个学习率以提升在稀疏梯度（即自然语言和计算机视觉问题）上的性能。
+
+均方根传播（RMSProp）基于权重梯度最近量级的均值为每一个参数适应性地保留学习率。这意味着算法在非稳态和在线问题上有很有优秀的性能。
+
+Adam 算法同时获得了 AdaGrad 和 RMSProp 算法的优点。Adam 不仅如 RMSProp 算法那样基于一阶矩均值计算适应性参数学习率，它同时还充分利用了梯度的二阶矩均值（即有偏方差/uncentered variance）。具体来说，算法计算了梯度的指数移动均值（exponential moving average），超参数 beta1 和 beta2 控制了这些移动均值的衰减率。移动均值的初始值和 beta1、beta2 值接近于 1（推荐值），因此矩估计的偏差接近于 0。该偏差通过首先计算带偏差的估计而后计算偏差修正后的估计而得到提升。
 
 
 
@@ -116,9 +118,37 @@ Boosting：各个预测函数只能顺序生成，因为后一个模型参数需
 
 (1) C++虚函数
 
-(2) python 深浅拷贝
+(2) C++ static
+
+​		程序内存空间包括
+
+​			a) 栈区: 编译器自动分配
+
+​			b) 堆区：程序员分配(malloc, new)
+
+​			c) 全局数据区(静态)：全局变量与静态变量放在一起
+
+(3) 搜索
+
+​		DFS: 栈，pop取元素找子结点，push
+
+​		BFS: 队列，头取元素找子结点，尾部插入
+
+(4) python 深浅拷贝
 
 
+
+## 5. Data structure
+
+
+
+参考文献
+
+[1] 林轩田，机器学习技法。
+
+[2] IRLAB, http://www.cnblogs.com/guolei/archive/2013/05/21/3091301.html
+
+[3] 百度技术，http://baidutech.blog.51cto.com/4114344/743809/
 
 
 
