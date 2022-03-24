@@ -1,2 +1,2 @@
 # Algorithms
-Different sorts of algorithms
+Algorithm practicing
